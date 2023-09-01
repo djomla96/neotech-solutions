@@ -9,20 +9,6 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-      retry: (_, error) => {
-        if (error) {
-          const isUnauthenticated =
-            // @ts-ignore
-            error?.response?.status === 401 ||
-            // @ts-ignore
-            error?.response?.statusText === 'Unauthorized';
-
-          // Do not retry query if user is not authenticated
-          return !isUnauthenticated;
-        }
-
-        return true;
-      },
     },
   },
 });
