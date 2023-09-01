@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ],
+  "defaultSeverity": "warning",
+  "overrides": [
+    {
+      "files": ["**/*.{js,ts,jsx,tsx}"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ],
+  "rules": {
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "function-name-case": null,
+    "function-no-unknown": null,
+    "function-whitespace-after": null,
+    "no-empty-source": null,
+    "selector-class-pattern": null,
+    "value-keyword-case": null
+  }
+}
