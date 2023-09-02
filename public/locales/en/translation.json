@@ -6,7 +6,19 @@
         "dateOfBirth": "Date of birth",
         "dateOfEmployment": "Date of employment",
         "address": "Address",
+        "zipCode": "Zip code",
+        "city": "City",
+        "address1": "Address 1",
+        "address2": "Address 2",
         "activeEmployees": "Active employees",
-        "deletedEmployees": "Deleted employees"
+        "deletedEmployees": "Deleted employees",
+        "addEmployee": "Add employee",
+        "enterEmployeeInfo": "Enter employee info"
+    },
+    "validation": {
+        "required": "{{field}} is required",
+        "email": "Enter a valid email",
+        "name": "Minimum 2 characters",
+        "phoneNumber": "Enter valid phone number"
     }
 }

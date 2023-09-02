@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { StyledCardContainer } from './Employees.styled';
 
-import { Table } from 'components';
+import { AddEmployee, Table } from 'components';
 import { useEmployees } from 'services/api';
 
 const initialPage = 0;
@@ -42,6 +42,8 @@ const Employees = () => {
 
   return (
     <StyledCardContainer>
+      <AddEmployee />
+
       <Table columns={tableColumns} rows={tableData} />
       <TablePagination
         component="div"
