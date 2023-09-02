@@ -13,7 +13,9 @@
         "activeEmployees": "Active employees",
         "deletedEmployees": "Deleted employees",
         "addEmployee": "Add employee",
-        "enterEmployeeInfo": "Enter employee info"
+        "enterEmployeeInfo": "Enter employee info",
+        "delete": "Delete",
+        "deletedAt": "Deleted at"
     },
     "validation": {
         "required": "{{field}} is required",

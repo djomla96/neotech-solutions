@@ -1,4 +1,4 @@
-import { TablePagination } from '@mui/material';
+import { Button, TablePagination } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -6,9 +6,12 @@ import { StyledCardContainer } from './Employees.styled';
 
 import { AddEmployee, Table } from 'components';
 import { useEmployees } from 'services/api';
+import useDeleteEmployee from 'services/api/hooks/useDeleteEmployee';
 
 const initialPage = 0;
 const initialRowsPerPage = 5;
+
+type Columns = 'softDelete' | keyof Employee;
 
 const Employees = () => {
   const { t } = useTranslation();
@@ -21,23 +24,34 @@ const Employees = () => {
     limit: rowsPerPage,
   });
 
-  const tableColumns: TableColumn<keyof Employee>[] = [
+  const { mutate: deleteEmployee } = useDeleteEmployee();
+
+  const tableColumns: TableColumn<Columns>[] = [
     { key: 'name', label: t('general.name') },
     { key: 'email', label: t('general.email') },
     { key: 'phoneNumber', label: t('general.phoneNumber') },
     { key: 'dateOfBirth', label: t('general.dateOfBirth') },
     { key: 'dateOfEmployment', label: t('general.dateOfEmployment') },
     { key: 'homeAddress', label: t('general.address') },
+    { key: 'softDelete', label: '' },
   ];
 
   const tableData = data?.employees.map(item => ({
-    id: item.email,
+    id: item._id,
     name: item.name,
     email: item.email,
     phoneNumber: item.phoneNumber,
     dateOfBirth: item.dateOfBirth,
     dateOfEmployment: item.dateOfEmployment,
     homeAddress: `${item.homeAddress.city} ${item.homeAddress.addressLine1} ${item.homeAddress.ZIPCode}`,
+    softDelete: (
+      <Button
+        color="error"
+        variant="contained"
+        onClick={() => deleteEmployee(item._id)}>
+        {t('general.delete')}
+      </Button>
+    ),
   }));
 
   return (

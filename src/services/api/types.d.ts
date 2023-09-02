@@ -9,19 +9,33 @@ interface GetEmployeesResponse {
 }
 
 interface HomeAddress {
-  city: string;
-  ZIPCode: string;
-  addressLine1: string;
   addressLine2: string;
+  addressLine1: string;
+  ZIPCode: string;
+  city: string;
+  _id: string;
 }
 
 interface Employee {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  homeAddress: HomeAddress;
-  dateOfEmployment: string;
+  _id: string;
+  deletedAt?: string;
+  isDeleted: boolean;
   dateOfBirth: string;
+  dateOfEmployment: string;
+  homeAddress: HomeAddress;
+  phoneNumber: string;
+  email: string;
+  name: string;
+  __v: number;
+}
+
+interface EmployeePayload {
+  dateOfBirth: string;
+  dateOfEmployment: string;
+  homeAddress: Omit<HomeAddress, '_id'>;
+  phoneNumber: string;
+  email: string;
+  name: string;
 }
 
 type QueryParamType = string | number | boolean | undefined;

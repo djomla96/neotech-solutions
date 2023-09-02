@@ -1,4 +1,5 @@
 import { TablePagination } from '@mui/material';
+import dayjs from 'dayjs';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -28,6 +29,7 @@ const DeletedEmployees = () => {
     { key: 'dateOfBirth', label: t('general.dateOfBirth') },
     { key: 'dateOfEmployment', label: t('general.dateOfEmployment') },
     { key: 'homeAddress', label: t('general.address') },
+    { key: 'deletedAt', label: t('general.deletedAt') },
   ];
 
   const tableData = data?.employees.map(item => ({
@@ -38,6 +40,7 @@ const DeletedEmployees = () => {
     dateOfBirth: item.dateOfBirth,
     dateOfEmployment: item.dateOfEmployment,
     homeAddress: `${item.homeAddress.city} ${item.homeAddress.addressLine1} ${item.homeAddress.ZIPCode}`,
+    deletedAt: dayjs(item.deletedAt).format('YYYY-MM-DD	'),
   }));
 
   return (

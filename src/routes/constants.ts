@@ -1,4 +1,4 @@
 export const ROUTES = {
-  deletedEmployees: 'deleted-employees',
+  deletedEmployees: '/deleted-employees',
   employees: '/employees',
 };
