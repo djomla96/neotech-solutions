@@ -1,3 +1,10 @@
 {
-    
+    "general": {
+        "name": "Name",
+        "email": "Email",
+        "phoneNumber": "Phone number",
+        "dateOfBirth": "Date of birth",
+        "dateOfEmployment": "Date of employment",
+        "address": "Address"
+    }
 }
