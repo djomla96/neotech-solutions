@@ -5,6 +5,8 @@
         "phoneNumber": "Phone number",
         "dateOfBirth": "Date of birth",
         "dateOfEmployment": "Date of employment",
-        "address": "Address"
+        "address": "Address",
+        "activeEmployees": "Active employees",
+        "deletedEmployees": "Deleted employees"
     }
 }

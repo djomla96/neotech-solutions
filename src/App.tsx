@@ -2,6 +2,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { Suspense } from 'react';
 
 import { MainLayout } from 'App.styled';
+import { Nav } from 'components';
 import queryClient from 'config/queryClient';
 import Routes from 'routes/Routes';
 
@@ -12,6 +13,7 @@ function App() {
     <Suspense fallback={null}>
       <QueryClientProvider client={queryClient}>
         <MainLayout>
+          <Nav />
           <Routes />
         </MainLayout>
       </QueryClientProvider>
