@@ -38,4 +38,9 @@ interface EmployeePayload {
   name: string;
 }
 
+interface UpdateEmployeePayload {
+  payload: EmployeePayload;
+  id: string;
+}
+
 type QueryParamType = string | number | boolean | undefined;

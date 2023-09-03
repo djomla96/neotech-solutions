@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 
 import { StyledCardContainer } from './Employees.styled';
 
-import { AddEmployee, Table } from 'components';
+import { AddEmployee, Table, UpdateEmployee } from 'components';
 import { useEmployees } from 'services/api';
 import useDeleteEmployee from 'services/api/hooks/useDeleteEmployee';
 
 const initialPage = 0;
 const initialRowsPerPage = 5;
 
-type Columns = 'softDelete' | keyof Employee;
+type Columns = 'softDelete' | 'update' | keyof Employee;
 
 const Employees = () => {
   const { t } = useTranslation();
@@ -33,6 +33,7 @@ const Employees = () => {
     { key: 'dateOfBirth', label: t('general.dateOfBirth') },
     { key: 'dateOfEmployment', label: t('general.dateOfEmployment') },
     { key: 'homeAddress', label: t('general.address') },
+    { key: 'update', label: '' },
     { key: 'softDelete', label: '' },
   ];
 
@@ -44,6 +45,7 @@ const Employees = () => {
     dateOfBirth: item.dateOfBirth,
     dateOfEmployment: item.dateOfEmployment,
     homeAddress: `${item.homeAddress.city} ${item.homeAddress.addressLine1} ${item.homeAddress.ZIPCode}`,
+    update: <UpdateEmployee id={item._id} />,
     softDelete: (
       <Button
         color="error"

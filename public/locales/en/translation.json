@@ -15,7 +15,9 @@
         "addEmployee": "Add employee",
         "enterEmployeeInfo": "Enter employee info",
         "delete": "Delete",
-        "deletedAt": "Deleted at"
+        "deletedAt": "Deleted at",
+        "update": "Update",
+        "updateEmployee": "Update employee"
     },
     "validation": {
         "required": "{{field}} is required",
